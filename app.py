@@ -97,6 +97,14 @@ def getting_video_info(channel_id):
           l.insert(-1,'00')  
         
       duration  = ':'.join(l)
+      result = duration.split(':')
+      for i in range(0,3,1):
+         if len(result[i]) == 1:
+            value = "0" + result[i]
+            result.remove(result[i])
+            result.insert(i,value)
+         final_result = ":".join(result)
+            
       data=dict(Channel_Name=item['snippet']['channelTitle'],
             Channel_Id=item['snippet']['channelId'],
             Video_Id=item['id'],
