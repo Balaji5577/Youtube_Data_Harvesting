@@ -118,7 +118,7 @@ def getting_video_info(channel_id):
             Favourite_count=item['statistics'].get('favoriteCount'),
             Thumbnail=item['snippet']['thumbnails']['default']['url'],
             Caption_Status=item['contentDetails']['caption'],
-            Duration=duration
+            Duration=final_result
                 )
       video_data.append(data)
   return video_data
